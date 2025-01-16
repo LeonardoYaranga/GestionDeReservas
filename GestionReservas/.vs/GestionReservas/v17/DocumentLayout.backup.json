@@ -1,0 +1,139 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\leona\\source\\repos\\GestionDeReservas\\GestionReservas\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{EEF43543-3F12-4008-9D25-035A6AA0862B}|GestionReservas\\GestionReservas.csproj|c:\\users\\leona\\source\\repos\\gestiondereservas\\gestionreservas\\gestionreservas\\controllers\\habitacioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EEF43543-3F12-4008-9D25-035A6AA0862B}|GestionReservas\\GestionReservas.csproj|solutionrelative:gestionreservas\\controllers\\habitacioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EEF43543-3F12-4008-9D25-035A6AA0862B}|GestionReservas\\GestionReservas.csproj|c:\\users\\leona\\source\\repos\\gestiondereservas\\gestionreservas\\gestionreservas\\controllers\\reservacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EEF43543-3F12-4008-9D25-035A6AA0862B}|GestionReservas\\GestionReservas.csproj|solutionrelative:gestionreservas\\controllers\\reservacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EEF43543-3F12-4008-9D25-035A6AA0862B}|GestionReservas\\GestionReservas.csproj|c:\\users\\leona\\source\\repos\\gestiondereservas\\gestionreservas\\gestionreservas\\controllers\\servicioadicionalcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EEF43543-3F12-4008-9D25-035A6AA0862B}|GestionReservas\\GestionReservas.csproj|solutionrelative:gestionreservas\\controllers\\servicioadicionalcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EEF43543-3F12-4008-9D25-035A6AA0862B}|GestionReservas\\GestionReservas.csproj|c:\\users\\leona\\source\\repos\\gestiondereservas\\gestionreservas\\gestionreservas\\controllers\\clientecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EEF43543-3F12-4008-9D25-035A6AA0862B}|GestionReservas\\GestionReservas.csproj|solutionrelative:gestionreservas\\controllers\\clientecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EEF43543-3F12-4008-9D25-035A6AA0862B}|GestionReservas\\GestionReservas.csproj|c:\\users\\leona\\source\\repos\\gestiondereservas\\gestionreservas\\gestionreservas\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EEF43543-3F12-4008-9D25-035A6AA0862B}|GestionReservas\\GestionReservas.csproj|solutionrelative:gestionreservas\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EEF43543-3F12-4008-9D25-035A6AA0862B}|GestionReservas\\GestionReservas.csproj|c:\\users\\leona\\source\\repos\\gestiondereservas\\gestionreservas\\gestionreservas\\migrations\\20250116165703_initialcreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EEF43543-3F12-4008-9D25-035A6AA0862B}|GestionReservas\\GestionReservas.csproj|solutionrelative:gestionreservas\\migrations\\20250116165703_initialcreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EEF43543-3F12-4008-9D25-035A6AA0862B}|GestionReservas\\GestionReservas.csproj|c:\\users\\leona\\source\\repos\\gestiondereservas\\gestionreservas\\gestionreservas\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EEF43543-3F12-4008-9D25-035A6AA0862B}|GestionReservas\\GestionReservas.csproj|solutionrelative:gestionreservas\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 205,
+          "SelectedChildIndex": 4,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "20250116165703_InitialCreate.cs",
+              "DocumentMoniker": "C:\\Users\\leona\\source\\repos\\GestionDeReservas\\GestionReservas\\GestionReservas\\Migrations\\20250116165703_InitialCreate.cs",
+              "RelativeDocumentMoniker": "GestionReservas\\Migrations\\20250116165703_InitialCreate.cs",
+              "ToolTip": "C:\\Users\\leona\\source\\repos\\GestionDeReservas\\GestionReservas\\GestionReservas\\Migrations\\20250116165703_InitialCreate.cs",
+              "RelativeToolTip": "GestionReservas\\Migrations\\20250116165703_InitialCreate.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAxwA0AAAA9AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-16T17:33:57.278Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ServicioAdicionalController.cs",
+              "DocumentMoniker": "C:\\Users\\leona\\source\\repos\\GestionDeReservas\\GestionReservas\\GestionReservas\\Controllers\\ServicioAdicionalController.cs",
+              "RelativeDocumentMoniker": "GestionReservas\\Controllers\\ServicioAdicionalController.cs",
+              "ToolTip": "C:\\Users\\leona\\source\\repos\\GestionDeReservas\\GestionReservas\\GestionReservas\\Controllers\\ServicioAdicionalController.cs",
+              "RelativeToolTip": "GestionReservas\\Controllers\\ServicioAdicionalController.cs",
+              "ViewState": "AgIAAC4AAAAAAAAAAAAQwFoAAAA6AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-16T17:01:17.762Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ReservaController.cs",
+              "DocumentMoniker": "C:\\Users\\leona\\source\\repos\\GestionDeReservas\\GestionReservas\\GestionReservas\\Controllers\\ReservaController.cs",
+              "RelativeDocumentMoniker": "GestionReservas\\Controllers\\ReservaController.cs",
+              "ToolTip": "C:\\Users\\leona\\source\\repos\\GestionDeReservas\\GestionReservas\\GestionReservas\\Controllers\\ReservaController.cs",
+              "RelativeToolTip": "GestionReservas\\Controllers\\ReservaController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAGQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-16T17:00:55.062Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ClienteController.cs",
+              "DocumentMoniker": "C:\\Users\\leona\\source\\repos\\GestionDeReservas\\GestionReservas\\GestionReservas\\Controllers\\ClienteController.cs",
+              "RelativeDocumentMoniker": "GestionReservas\\Controllers\\ClienteController.cs",
+              "ToolTip": "C:\\Users\\leona\\source\\repos\\GestionDeReservas\\GestionReservas\\GestionReservas\\Controllers\\ClienteController.cs",
+              "RelativeToolTip": "GestionReservas\\Controllers\\ClienteController.cs",
+              "ViewState": "AgIAADcAAAAAAAAAAAAcwCEAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-16T17:00:01.662Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "HabitacionController.cs",
+              "DocumentMoniker": "C:\\Users\\leona\\source\\repos\\GestionDeReservas\\GestionReservas\\GestionReservas\\Controllers\\HabitacionController.cs",
+              "RelativeDocumentMoniker": "GestionReservas\\Controllers\\HabitacionController.cs",
+              "ToolTip": "C:\\Users\\leona\\source\\repos\\GestionDeReservas\\GestionReservas\\GestionReservas\\Controllers\\HabitacionController.cs",
+              "RelativeToolTip": "GestionReservas\\Controllers\\HabitacionController.cs",
+              "ViewState": "AgIAAC0AAAAAAAAAAAAAADoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-16T16:59:37.64Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "AppDBContext.cs",
+              "DocumentMoniker": "C:\\Users\\leona\\source\\repos\\GestionDeReservas\\GestionReservas\\GestionReservas\\AppDBContext.cs",
+              "RelativeDocumentMoniker": "GestionReservas\\AppDBContext.cs",
+              "ToolTip": "C:\\Users\\leona\\source\\repos\\GestionDeReservas\\GestionReservas\\GestionReservas\\AppDBContext.cs",
+              "RelativeToolTip": "GestionReservas\\AppDBContext.cs",
+              "ViewState": "AgIAAGMAAAAAAAAAAAA8wHoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-16T16:20:06.693Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\leona\\source\\repos\\GestionDeReservas\\GestionReservas\\GestionReservas\\Program.cs",
+              "RelativeDocumentMoniker": "GestionReservas\\Program.cs",
+              "ToolTip": "C:\\Users\\leona\\source\\repos\\GestionDeReservas\\GestionReservas\\GestionReservas\\Program.cs",
+              "RelativeToolTip": "GestionReservas\\Program.cs",
+              "ViewState": "AgIAABgAAAAAAAAAAIBJwBgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-16T16:14:52.46Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

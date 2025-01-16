@@ -1,0 +1,1 @@
+zRdC:\Users\leona\source\repos\GestionDeReservas\GestionReservas\GestionReservas\GestionReservas.csproj¢net8.0òCSharp12
