@@ -42,9 +42,15 @@ namespace GestionReservas.Controllers
                 if (reserva == null)
                     return BadRequest($"La reserva con ID {servicioAdicional.IdReserva} no existe.");
 
+                // Verificar si ya existe un servicio adicional con la misma descripción para la reserva
+                var existeServicio = await _appDBContext.ServiciosAdicionales
+                    .AnyAsync(s => s.IdReserva == servicioAdicional.IdReserva && s.Descripcion == servicioAdicional.Descripcion);
+                if (existeServicio)
+                    return BadRequest("Ya existe un servicio adicional con la misma descripción para esta reserva.");
+
                 _appDBContext.ServiciosAdicionales.Add(servicioAdicional);
                 await _appDBContext.SaveChangesAsync();
-                return Ok(servicioAdicional);
+                return CreatedAtAction(nameof(PostServicioAdicional), new { id = servicioAdicional.Id }, servicioAdicional);
             }
 
             [HttpPut("{id}")]

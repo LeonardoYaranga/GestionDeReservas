@@ -34,9 +34,14 @@ namespace GestionReservas.Controllers
         [HttpPost]
         public async Task<ActionResult<Cliente>> PostCliente(Cliente cliente)
         {
+            // Verificar si ya existe un cliente con la misma cédula
+            var existeCliente = await _appDBContext.Clientes.AnyAsync(c => c.Cedula == cliente.Cedula);
+            if (existeCliente)
+                return BadRequest("Ya existe un cliente con la misma cédula.");
+
             _appDBContext.Clientes.Add(cliente);
             await _appDBContext.SaveChangesAsync();
-            return Ok(cliente); 
+            return CreatedAtAction(nameof(PostCliente), new { id = cliente.Id }, cliente);
         }
 
         [HttpPut("{id}")]

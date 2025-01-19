@@ -33,9 +33,14 @@ namespace GestionReservas.Controllers
         [HttpPost]
         public async Task<ActionResult<Habitacion>> PostHabitacion(Habitacion habitacion)
         {
+            // Verificar si ya existe una habitación con el mismo número
+            var existeHabitacion = await _appDBContext.Habitaciones.AnyAsync(h => h.NumeroHabitacion == habitacion.NumeroHabitacion);
+            if (existeHabitacion)
+                return BadRequest("Ya existe una habitación con el mismo número.");
+
             _appDBContext.Habitaciones.Add(habitacion);
             await _appDBContext.SaveChangesAsync();
-            return CreatedAtAction(nameof(GetHabitacion), new { id = habitacion.Id }, habitacion);
+            return CreatedAtAction(nameof(PostHabitacion), new { id = habitacion.Id }, habitacion);
         }
 
         [HttpPut("{id}")]

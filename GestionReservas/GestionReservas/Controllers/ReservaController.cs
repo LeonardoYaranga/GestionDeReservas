@@ -33,15 +33,30 @@ namespace GestionReservas.Controllers
         [HttpPost]
         public async Task<ActionResult<Reserva>> PostReserva(Reserva reserva)
         {
+            // Validar Fechas
+            if (reserva.FechaEntrada >= reserva.FechaSalida)
+                return BadRequest("La fecha de entrada debe ser menor que la fecha de salida.");
+
+            if (reserva.FechaEntrada < DateTime.Now)
+                return BadRequest("La fecha de entrada no puede ser en el pasado.");
+
             // Verificar si el cliente existe
-            var cliente = await _appDBContext.Clientes.FindAsync(reserva.IdCliente);
-            if (cliente == null)
+            var clienteExiste = await _appDBContext.Clientes.AnyAsync(c => c.Id == reserva.IdCliente);
+            if (!clienteExiste)
                 return BadRequest($"El cliente con ID {reserva.IdCliente} no existe.");
 
             // Verificar si la habitación existe
-            var habitacion = await _appDBContext.Habitaciones.FindAsync(reserva.IdHabitacion);
-            if (habitacion == null)
+            var habitacionExiste = await _appDBContext.Habitaciones.AnyAsync(h => h.Id == reserva.IdHabitacion);
+            if (!habitacionExiste)
                 return BadRequest($"La habitación con ID {reserva.IdHabitacion} no existe.");
+
+            // Verificar si la habitación ya está reservada en el rango de fechas
+            var habitacionReservada = await _appDBContext.Reservas.AnyAsync(r =>
+                r.IdHabitacion == reserva.IdHabitacion &&
+                ((reserva.FechaEntrada >= r.FechaEntrada && reserva.FechaEntrada < r.FechaSalida) ||
+                 (reserva.FechaSalida > r.FechaEntrada && reserva.FechaSalida <= r.FechaSalida)));
+            if (habitacionReservada)
+                return BadRequest("La habitación ya está reservada en el rango de fechas seleccionado.");
 
             _appDBContext.Reservas.Add(reserva);
             await _appDBContext.SaveChangesAsync();
@@ -52,21 +67,37 @@ namespace GestionReservas.Controllers
         public async Task<IActionResult> PutReserva(int id, Reserva reserva)
         {
             if (id < 1)
-                return BadRequest("El ID no puede ser negativo o 0");
+                return BadRequest("El ID no puede ser negativo o 0.");
 
             var existingReserva = await _appDBContext.Reservas.FindAsync(id);
             if (existingReserva == null)
-                return NotFound("Reserva con ese ID no encontrada");
+                return NotFound("Reserva con ese ID no encontrada.");
+
+            // Validar Fechas
+            if (reserva.FechaEntrada >= reserva.FechaSalida)
+                return BadRequest("La fecha de entrada debe ser menor que la fecha de salida.");
+
+            if (reserva.FechaEntrada < DateTime.Now)
+                return BadRequest("La fecha de entrada no puede ser en el pasado.");
 
             // Verificar si el cliente existe
-            var cliente = await _appDBContext.Clientes.FindAsync(reserva.IdCliente);
-            if (cliente == null)
+            var clienteExiste = await _appDBContext.Clientes.AnyAsync(c => c.Id == reserva.IdCliente);
+            if (!clienteExiste)
                 return BadRequest($"El cliente con ID {reserva.IdCliente} no existe.");
 
             // Verificar si la habitación existe
-            var habitacion = await _appDBContext.Habitaciones.FindAsync(reserva.IdHabitacion);
-            if (habitacion == null)
+            var habitacionExiste = await _appDBContext.Habitaciones.AnyAsync(h => h.Id == reserva.IdHabitacion);
+            if (!habitacionExiste)
                 return BadRequest($"La habitación con ID {reserva.IdHabitacion} no existe.");
+
+            // Verificar si la habitación ya está reservada en el rango de fechas
+            var habitacionReservada = await _appDBContext.Reservas.AnyAsync(r =>
+                r.IdHabitacion == reserva.IdHabitacion &&
+                r.Id != id && // Excluir la reserva actual
+                ((reserva.FechaEntrada >= r.FechaEntrada && reserva.FechaEntrada < r.FechaSalida) ||
+                 (reserva.FechaSalida > r.FechaEntrada && reserva.FechaSalida <= r.FechaSalida)));
+            if (habitacionReservada)
+                return BadRequest("La habitación ya está reservada en el rango de fechas seleccionado.");
 
             existingReserva.IdCliente = reserva.IdCliente;
             existingReserva.IdHabitacion = reserva.IdHabitacion;
@@ -83,23 +114,23 @@ namespace GestionReservas.Controllers
         {
             var reserva = await _appDBContext.Reservas.FindAsync(id);
             if (reserva == null)
-                return NotFound("Reserva con ese ID no encontrada");
-
+                return NotFound("Reserva con ese ID no encontrada.");
 
             // Verificar si el cliente existe
-            var cliente = await _appDBContext.Clientes.FindAsync(reserva.IdCliente);
-            if (cliente != null)
-                return BadRequest($"Existe un cliente con ID {reserva.IdCliente}, por lo cual no se puede eliminar.");
+            var clienteExiste = await _appDBContext.Clientes.AnyAsync(c => c.Id == reserva.IdCliente);
+            if (clienteExiste)
+                return BadRequest($"No se puede eliminar la reserva porque el cliente con ID {reserva.IdCliente} aún existe.");
 
             // Verificar si la habitación existe
-            var habitacion = await _appDBContext.Habitaciones.FindAsync(reserva.IdHabitacion);
-            if (habitacion != null)
-                return BadRequest($"Existe una habitación con ID {reserva.IdHabitacion},  por lo cual no se puede eliminar.");
+            var habitacionExiste = await _appDBContext.Habitaciones.AnyAsync(h => h.Id == reserva.IdHabitacion);
+            if (habitacionExiste)
+                return BadRequest($"No se puede eliminar la reserva porque la habitación con ID {reserva.IdHabitacion} aún existe.");
 
             _appDBContext.Reservas.Remove(reserva);
             await _appDBContext.SaveChangesAsync();
 
-            return Ok("Reserva eliminada");
+            return Ok("Reserva eliminada exitosamente.");
         }
-    }
+
+    }s
 }
