@@ -50,7 +50,11 @@ namespace GestionReservas.Controllers
 
                 _appDBContext.ServiciosAdicionales.Add(servicioAdicional);
                 await _appDBContext.SaveChangesAsync();
-                return CreatedAtAction(nameof(PostServicioAdicional), new { id = servicioAdicional.Id }, servicioAdicional);
+
+                var serviciosAdicionalIngresado = await _appDBContext.Clientes.FirstOrDefaultAsync((p => p.Id == servicioAdicional.Id));
+
+                return Ok(new { message = "Servicio adicional ingresado con éxito", servicioAdicional = serviciosAdicionalIngresado });
+
             }
 
             [HttpPut("{id}")]
@@ -73,7 +77,7 @@ namespace GestionReservas.Controllers
                 existingServicioAdicional.IdReserva = servicioAdicional.IdReserva;
 
                 await _appDBContext.SaveChangesAsync();
-                return Ok(existingServicioAdicional);
+                return Ok(new { message = "Servicio adicional editado con éxito", servicioAdicional = existingServicioAdicional});
             }
 
             [HttpDelete("{id}")]

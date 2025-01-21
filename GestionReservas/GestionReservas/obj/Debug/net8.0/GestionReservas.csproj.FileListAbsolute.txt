@@ -170,3 +170,4 @@ C:\Users\leona\source\repos\GestionDeReservas\GestionReservas\GestionReservas\bi
 C:\Users\leona\source\repos\GestionDeReservas\GestionReservas\GestionReservas\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
 C:\Users\leona\source\repos\GestionDeReservas\GestionReservas\GestionReservas\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
 C:\Users\leona\source\repos\GestionDeReservas\GestionReservas\GestionReservas\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
+C:\Users\leona\source\repos\GestionDeReservas\GestionReservas\GestionReservas\obj\Debug\net8.0\GestionReservas.sourcelink.json

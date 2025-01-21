@@ -40,7 +40,11 @@ namespace GestionReservas.Controllers
 
             _appDBContext.Habitaciones.Add(habitacion);
             await _appDBContext.SaveChangesAsync();
-            return CreatedAtAction(nameof(PostHabitacion), new { id = habitacion.Id }, habitacion);
+
+            var habitacionIngresada = await _appDBContext.Habitaciones.FirstOrDefaultAsync((p => p.Id == habitacion.Id));
+
+            return Ok(new { message = "Habitacion ingresada con éxito", habitacion = habitacionIngresada });
+
         }
 
         [HttpPut("{id}")]
@@ -59,7 +63,9 @@ namespace GestionReservas.Controllers
             existingHabitacion.Lugar=habitacion.Lugar ?? existingHabitacion.Lugar;
 
             await _appDBContext.SaveChangesAsync();
-            return Ok(existingHabitacion);
+     
+            return Ok(new { message = "Habitacion editada con éxito", habitacion = existingHabitacion });
+
         }
 
         [HttpDelete("{id}")]

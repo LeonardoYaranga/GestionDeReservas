@@ -758,25 +758,36 @@
         ],
         "type": "object",
         "properties": {
-          "cedula": {
-            "type": "string",
+          "id": {
+            "type": "integer",
+            "format": "int32",
             "nullable": true
+          },
+          "cedula": {
+            "maxLength": 10,
+            "minLength": 10,
+            "type": "string"
           },
           "nombre": {
-            "type": "string",
-            "nullable": true
+            "maxLength": 100,
+            "minLength": 0,
+            "type": "string"
           },
           "apellido": {
-            "type": "string",
-            "nullable": true
+            "maxLength": 100,
+            "minLength": 0,
+            "type": "string"
           },
           "telefono": {
+            "maxLength": 10,
+            "minLength": 10,
             "type": "string",
-            "nullable": true
+            "format": "tel"
           },
           "direccion": {
-            "type": "string",
-            "nullable": true
+            "maxLength": 100,
+            "minLength": 0,
+            "type": "string"
           }
         },
         "additionalProperties": false
@@ -790,22 +801,30 @@
         ],
         "type": "object",
         "properties": {
-          "numeroHabitacion": {
-            "type": "string",
+          "id": {
+            "type": "integer",
+            "format": "int32",
             "nullable": true
+          },
+          "numeroHabitacion": {
+            "maxLength": 10,
+            "minLength": 0,
+            "type": "string"
           },
           "descripcion": {
-            "type": "string",
-            "nullable": true
+            "maxLength": 255,
+            "minLength": 0,
+            "type": "string"
           },
           "precio": {
+            "minimum": 0,01,
             "type": "number",
-            "format": "double",
-            "nullable": true
+            "format": "double"
           },
           "lugar": {
-            "type": "string",
-            "nullable": true
+            "maxLength": 100,
+            "minLength": 0,
+            "type": "string"
           }
         },
         "additionalProperties": false
@@ -820,30 +839,35 @@
         ],
         "type": "object",
         "properties": {
-          "idCliente": {
+          "id": {
             "type": "integer",
             "format": "int32",
             "nullable": true
           },
-          "idHabitacion": {
+          "idCliente": {
+            "maximum": 2147483647,
+            "minimum": 1,
             "type": "integer",
-            "format": "int32",
-            "nullable": true
+            "format": "int32"
+          },
+          "idHabitacion": {
+            "maximum": 2147483647,
+            "minimum": 1,
+            "type": "integer",
+            "format": "int32"
           },
           "fechaEntrada": {
             "type": "string",
-            "format": "date-time",
-            "nullable": true
+            "format": "date-time"
           },
           "fechaSalida": {
             "type": "string",
-            "format": "date-time",
-            "nullable": true
+            "format": "date-time"
           },
           "total": {
+            "minimum": 0,01,
             "type": "number",
-            "format": "double",
-            "nullable": true
+            "format": "double"
           }
         },
         "additionalProperties": false
@@ -856,19 +880,26 @@
         ],
         "type": "object",
         "properties": {
-          "idReserva": {
+          "id": {
             "type": "integer",
             "format": "int32",
             "nullable": true
           },
+          "idReserva": {
+            "maximum": 2147483647,
+            "minimum": 1,
+            "type": "integer",
+            "format": "int32"
+          },
           "descripcion": {
-            "type": "string",
-            "nullable": true
+            "maxLength": 255,
+            "minLength": 0,
+            "type": "string"
           },
           "costo": {
+            "minimum": 0,01,
             "type": "number",
-            "format": "double",
-            "nullable": true
+            "format": "double"
           }
         },
         "additionalProperties": false

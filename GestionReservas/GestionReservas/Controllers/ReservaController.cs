@@ -33,24 +33,20 @@ namespace GestionReservas.Controllers
         [HttpPost]
         public async Task<ActionResult<Reserva>> PostReserva(Reserva reserva)
         {
-            // Validar Fechas
             if (reserva.FechaEntrada >= reserva.FechaSalida)
                 return BadRequest("La fecha de entrada debe ser menor que la fecha de salida.");
 
             if (reserva.FechaEntrada < DateTime.Now)
                 return BadRequest("La fecha de entrada no puede ser en el pasado.");
 
-            // Verificar si el cliente existe
             var clienteExiste = await _appDBContext.Clientes.AnyAsync(c => c.Id == reserva.IdCliente);
             if (!clienteExiste)
                 return BadRequest($"El cliente con ID {reserva.IdCliente} no existe.");
 
-            // Verificar si la habitación existe
             var habitacionExiste = await _appDBContext.Habitaciones.AnyAsync(h => h.Id == reserva.IdHabitacion);
             if (!habitacionExiste)
                 return BadRequest($"La habitación con ID {reserva.IdHabitacion} no existe.");
 
-            // Verificar si la habitación ya está reservada en el rango de fechas
             var habitacionReservada = await _appDBContext.Reservas.AnyAsync(r =>
                 r.IdHabitacion == reserva.IdHabitacion &&
                 ((reserva.FechaEntrada >= r.FechaEntrada && reserva.FechaEntrada < r.FechaSalida) ||
@@ -60,7 +56,11 @@ namespace GestionReservas.Controllers
 
             _appDBContext.Reservas.Add(reserva);
             await _appDBContext.SaveChangesAsync();
-            return CreatedAtAction(nameof(GetReserva), new { id = reserva.Id }, reserva);
+
+            var reservaIngresada = await _appDBContext.Reservas.FirstOrDefaultAsync((p => p.Id == reserva.Id));
+
+            return Ok(new { message = "Reserva creada con éxito", reserva = reservaIngresada });
+
         }
 
         [HttpPut("{id}")]
@@ -106,7 +106,7 @@ namespace GestionReservas.Controllers
             existingReserva.Total = reserva.Total ?? existingReserva.Total;
 
             await _appDBContext.SaveChangesAsync();
-            return Ok(existingReserva);
+            return Ok(new { message = "Reserva editada con éxito", habitacion = existingReserva });
         }
 
         [HttpDelete("{id}")]
@@ -132,5 +132,5 @@ namespace GestionReservas.Controllers
             return Ok("Reserva eliminada exitosamente.");
         }
 
-    }s
+    }
 }

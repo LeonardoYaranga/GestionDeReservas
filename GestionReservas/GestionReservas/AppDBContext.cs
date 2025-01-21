@@ -70,7 +70,7 @@ namespace GestionReservas
 
     public class Cliente
     {
-        [JsonIgnore]
+
         public int? Id { get; set; }
         [Required(ErrorMessage = "La cédula es obligatoria.")]
         [StringLength(10, MinimumLength = 10, ErrorMessage = "La cédula debe tener exactamente 10 caracteres.")]
@@ -94,7 +94,7 @@ namespace GestionReservas
 
     public class Habitacion
     {
-        [JsonIgnore]
+        
         public int? Id { get; set; }
 
         [Required(ErrorMessage = "El número de habitación es obligatorio.")]
@@ -119,7 +119,7 @@ namespace GestionReservas
 
     public class Reserva
     {
-        [JsonIgnore]
+       
         public int? Id { get; set; }
 
         [Required(ErrorMessage = "El ID del cliente es obligatorio.")]
@@ -152,7 +152,7 @@ namespace GestionReservas
 
     public class ServicioAdicional
     {
-        [JsonIgnore]
+     
         public int? Id { get; set; }
 
         [Required(ErrorMessage = "El ID de la reserva es obligatorio.")]
