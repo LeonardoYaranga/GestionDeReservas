@@ -5,6 +5,8 @@ C:\Users\leona\source\repos\GestionDeReservas\GestionReservas\GestionReservas\Co
 C:\Users\leona\source\repos\GestionDeReservas\GestionReservas\GestionReservas\Controllers\ServicioAdicionalController.cs
 C:\Users\leona\source\repos\GestionDeReservas\GestionReservas\GestionReservas\Migrations\20250116165703_InitialCreate.cs
 C:\Users\leona\source\repos\GestionDeReservas\GestionReservas\GestionReservas\Migrations\20250116165703_InitialCreate.Designer.cs
+C:\Users\leona\source\repos\GestionDeReservas\GestionReservas\GestionReservas\Migrations\20250116173949_LugarEnHabitacion.cs
+C:\Users\leona\source\repos\GestionDeReservas\GestionReservas\GestionReservas\Migrations\20250116173949_LugarEnHabitacion.Designer.cs
 C:\Users\leona\source\repos\GestionDeReservas\GestionReservas\GestionReservas\Migrations\AppDBContextModelSnapshot.cs
 C:\Users\leona\source\repos\GestionDeReservas\GestionReservas\GestionReservas\Program.cs
 C:\Users\leona\source\repos\GestionDeReservas\GestionReservas\GestionReservas\obj\Debug\net8.0\GestionReservas.GlobalUsings.g.cs

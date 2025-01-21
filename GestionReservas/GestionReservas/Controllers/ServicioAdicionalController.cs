@@ -51,7 +51,7 @@ namespace GestionReservas.Controllers
                 _appDBContext.ServiciosAdicionales.Add(servicioAdicional);
                 await _appDBContext.SaveChangesAsync();
 
-                var serviciosAdicionalIngresado = await _appDBContext.Clientes.FirstOrDefaultAsync((p => p.Id == servicioAdicional.Id));
+                var serviciosAdicionalIngresado = await _appDBContext.ServiciosAdicionales.FirstOrDefaultAsync((p => p.Id == servicioAdicional.Id));
 
                 return Ok(new { message = "Servicio adicional ingresado con éxito", servicioAdicional = serviciosAdicionalIngresado });
 
@@ -77,7 +77,7 @@ namespace GestionReservas.Controllers
                 existingServicioAdicional.IdReserva = servicioAdicional.IdReserva;
 
                 await _appDBContext.SaveChangesAsync();
-                return Ok(new { message = "Servicio adicional editado con éxito", servicioAdicional = existingServicioAdicional});
+                return Ok(new { message = "Servicio adicional editado con éxito", servicioAdicional = existingServicioAdicional });
             }
 
             [HttpDelete("{id}")]
@@ -88,13 +88,6 @@ namespace GestionReservas.Controllers
                 {
                     return NotFound("Servicio adicional no encontrado");
                 }
-
-
-                var reserva = await _appDBContext.Reservas.FindAsync(servicioAdicional.IdReserva);
-                if (reserva != null)
-                    return BadRequest($"Existe una reserva con ID {servicioAdicional.IdReserva} vinculada a este Servicio, no se puede borrar.");
-
-
 
                 _appDBContext.ServiciosAdicionales.Remove(servicioAdicional);
                 await _appDBContext.SaveChangesAsync();

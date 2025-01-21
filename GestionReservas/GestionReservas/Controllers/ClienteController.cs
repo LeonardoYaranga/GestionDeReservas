@@ -52,7 +52,7 @@ namespace GestionReservas.Controllers
             return Ok(new { message = "Cliente ingresado con éxito", cliente = clienteIngresado });
         }
 
-        private bool ValidarCedulaEcuadoriana(string cedula)
+        private static bool ValidarCedulaEcuadoriana(string cedula)
         {
             if (cedula.Length != 10)
             {
@@ -118,17 +118,22 @@ namespace GestionReservas.Controllers
             return Ok(new { message = "Cliente editado con éxito", cliente = existingClient });
         }
 
+       
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteCliente(int id)
         {
             var cliente = await _appDBContext.Clientes.FindAsync(id);
             if (cliente == null)
-            {
-                return NotFound("Cliente no encontrado");
-            }
+                return NotFound("Cliente con ese ID no encontrado.");
+
+            var tieneReservas = await _appDBContext.Reservas.AnyAsync(r => r.IdCliente == id);
+            if (tieneReservas)
+                return BadRequest("No se puede eliminar el cliente porque tiene reservas asociadas.");
+
             _appDBContext.Clientes.Remove(cliente);
             await _appDBContext.SaveChangesAsync();
-            return Ok("Cliente eliminado correctamente");
+
+            return Ok("Cliente eliminado exitosamente.");
         }
     }
 }

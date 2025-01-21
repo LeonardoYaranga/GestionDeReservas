@@ -94,9 +94,7 @@ namespace GestionReservas
 
     public class Habitacion
     {
-        
         public int? Id { get; set; }
-
         [Required(ErrorMessage = "El número de habitación es obligatorio.")]
         [StringLength(10, ErrorMessage = "El número de habitación no debe exceder los 10 caracteres.")]
         public string? NumeroHabitacion { get; set; }
@@ -119,9 +117,7 @@ namespace GestionReservas
 
     public class Reserva
     {
-       
         public int? Id { get; set; }
-
         [Required(ErrorMessage = "El ID del cliente es obligatorio.")]
         [Range(1, int.MaxValue, ErrorMessage = "El ID del cliente debe ser mayor a 0.")]
         public int? IdCliente { get; set; }

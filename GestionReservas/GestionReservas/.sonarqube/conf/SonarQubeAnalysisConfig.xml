@@ -9,7 +9,7 @@
   <HasBeginStepCommandLineCredentials>true</HasBeginStepCommandLineCredentials>
   <SonarQubeHostUrl>http://localhost:9000</SonarQubeHostUrl>
   <SonarQubeVersion>25.1.0.102122</SonarQubeVersion>
-  <SonarProjectKey>GestionReservas.</SonarProjectKey>
+  <SonarProjectKey>GestionReservas</SonarProjectKey>
   <AdditionalConfig>
     <ConfigSetting Id="BuildUri" />
     <ConfigSetting Id="TfsUri" />
@@ -143,7 +143,7 @@
     <Property Name="sonar.java.jvmframeworkconfig.activate">true</Property>
     <Property Name="sonar.updatecenter.url">https://downloads.sonarsource.com/sonarqube/update/update-center.properties</Property>
     <Property Name="sonar.core.id">147B411E-AZRlx_y-t_w2Jvk8Hpof</Property>
-    <Property Name="sonar.core.startTime">16/1/2025 12:26:44</Property>
+    <Property Name="sonar.core.startTime">20/1/2025 22:20:52</Property>
   </ServerSettings>
   <LocalSettings>
     <Property Name="sonar.host.url">http://localhost:9000</Property>

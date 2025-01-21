@@ -36,9 +36,6 @@ namespace GestionReservas.Controllers
             if (reserva.FechaEntrada >= reserva.FechaSalida)
                 return BadRequest("La fecha de entrada debe ser menor que la fecha de salida.");
 
-            if (reserva.FechaEntrada < DateTime.Now)
-                return BadRequest("La fecha de entrada no puede ser en el pasado.");
-
             var clienteExiste = await _appDBContext.Clientes.AnyAsync(c => c.Id == reserva.IdCliente);
             if (!clienteExiste)
                 return BadRequest($"El cliente con ID {reserva.IdCliente} no existe.");
@@ -48,9 +45,17 @@ namespace GestionReservas.Controllers
                 return BadRequest($"La habitación con ID {reserva.IdHabitacion} no existe.");
 
             var habitacionReservada = await _appDBContext.Reservas.AnyAsync(r =>
-                r.IdHabitacion == reserva.IdHabitacion &&
-                ((reserva.FechaEntrada >= r.FechaEntrada && reserva.FechaEntrada < r.FechaSalida) ||
-                 (reserva.FechaSalida > r.FechaEntrada && reserva.FechaSalida <= r.FechaSalida)));
+            r.IdHabitacion == reserva.IdHabitacion &&
+            (
+                (reserva.FechaEntrada >= r.FechaEntrada && reserva.FechaEntrada < r.FechaSalida) ||
+                (reserva.FechaSalida > r.FechaEntrada && reserva.FechaSalida <= r.FechaSalida) ||  
+                (reserva.FechaEntrada <= r.FechaEntrada && reserva.FechaSalida >= r.FechaSalida)  
+            ));
+
+            if (habitacionReservada)
+                return BadRequest("La habitación ya está reservada en el rango de fechas seleccionado.");
+
+
             if (habitacionReservada)
                 return BadRequest("La habitación ya está reservada en el rango de fechas seleccionado.");
 
@@ -73,29 +78,26 @@ namespace GestionReservas.Controllers
             if (existingReserva == null)
                 return NotFound("Reserva con ese ID no encontrada.");
 
-            // Validar Fechas
             if (reserva.FechaEntrada >= reserva.FechaSalida)
                 return BadRequest("La fecha de entrada debe ser menor que la fecha de salida.");
 
-            if (reserva.FechaEntrada < DateTime.Now)
-                return BadRequest("La fecha de entrada no puede ser en el pasado.");
-
-            // Verificar si el cliente existe
             var clienteExiste = await _appDBContext.Clientes.AnyAsync(c => c.Id == reserva.IdCliente);
             if (!clienteExiste)
                 return BadRequest($"El cliente con ID {reserva.IdCliente} no existe.");
 
-            // Verificar si la habitación existe
             var habitacionExiste = await _appDBContext.Habitaciones.AnyAsync(h => h.Id == reserva.IdHabitacion);
             if (!habitacionExiste)
                 return BadRequest($"La habitación con ID {reserva.IdHabitacion} no existe.");
 
-            // Verificar si la habitación ya está reservada en el rango de fechas
+
             var habitacionReservada = await _appDBContext.Reservas.AnyAsync(r =>
-                r.IdHabitacion == reserva.IdHabitacion &&
-                r.Id != id && // Excluir la reserva actual
-                ((reserva.FechaEntrada >= r.FechaEntrada && reserva.FechaEntrada < r.FechaSalida) ||
-                 (reserva.FechaSalida > r.FechaEntrada && reserva.FechaSalida <= r.FechaSalida)));
+           r.IdHabitacion == reserva.IdHabitacion && 
+                r.Id != id && 
+           (
+               (reserva.FechaEntrada >= r.FechaEntrada && reserva.FechaEntrada < r.FechaSalida) || 
+               (reserva.FechaSalida > r.FechaEntrada && reserva.FechaSalida <= r.FechaSalida) ||  
+               (reserva.FechaEntrada <= r.FechaEntrada && reserva.FechaSalida >= r.FechaSalida)   
+           ));
             if (habitacionReservada)
                 return BadRequest("La habitación ya está reservada en el rango de fechas seleccionado.");
 
@@ -116,15 +118,12 @@ namespace GestionReservas.Controllers
             if (reserva == null)
                 return NotFound("Reserva con ese ID no encontrada.");
 
-            // Verificar si el cliente existe
-            var clienteExiste = await _appDBContext.Clientes.AnyAsync(c => c.Id == reserva.IdCliente);
-            if (clienteExiste)
-                return BadRequest($"No se puede eliminar la reserva porque el cliente con ID {reserva.IdCliente} aún existe.");
+            // Verificar si hay servicios adicionales vinculados a esta reserva
+            var tieneServiciosVinculados = await _appDBContext.ServiciosAdicionales
+                .AnyAsync(s => s.IdReserva == id);
 
-            // Verificar si la habitación existe
-            var habitacionExiste = await _appDBContext.Habitaciones.AnyAsync(h => h.Id == reserva.IdHabitacion);
-            if (habitacionExiste)
-                return BadRequest($"No se puede eliminar la reserva porque la habitación con ID {reserva.IdHabitacion} aún existe.");
+            if (tieneServiciosVinculados)
+                return BadRequest("No se puede eliminar la reserva porque tiene servicios adicionales vinculados.");
 
             _appDBContext.Reservas.Remove(reserva);
             await _appDBContext.SaveChangesAsync();

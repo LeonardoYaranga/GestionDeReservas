@@ -68,16 +68,23 @@ namespace GestionReservas.Controllers
 
         }
 
+
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteHabitacion(int id)
         {
             var habitacion = await _appDBContext.Habitaciones.FindAsync(id);
             if (habitacion == null)
-                return NotFound("Habitación con ese ID no encontrada");
+                return NotFound("Habitación con ese ID no encontrado.");
+
+            var tieneReservas = await _appDBContext.Reservas.AnyAsync(r => r.IdHabitacion == id);
+            if (tieneReservas)
+                return BadRequest("No se puede eliminar la habitacion porque tiene reservas asociadas.");
 
             _appDBContext.Habitaciones.Remove(habitacion);
             await _appDBContext.SaveChangesAsync();
-            return Ok("Habitación eliminada");
+
+            return Ok("Habitación eliminado exitosamente.");
         }
+
     }
 }

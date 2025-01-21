@@ -12,6 +12,7 @@ namespace GestionReservas.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             const string sqlServIdent = "SqlServer:Identity";
+            const string TReserv = "Reservas";
             migrationBuilder.CreateTable(
                 name: "Clientes",
                 columns: table => new
@@ -45,7 +46,7 @@ namespace GestionReservas.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Reservas",
+                name: TReserv,
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
@@ -89,19 +90,19 @@ namespace GestionReservas.Migrations
                     table.ForeignKey(
                         name: "FK_ServiciosAdicionales_Reservas_IdReserva",
                         column: x => x.IdReserva,
-                        principalTable: "Reservas",
+                        principalTable: TReserv,
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(
                 name: "IX_Reservas_IdCliente",
-                table: "Reservas",
+                table: TReserv,
                 column: "IdCliente");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Reservas_IdHabitacion",
-                table: "Reservas",
+                table: TReserv,
                 column: "IdHabitacion");
 
             migrationBuilder.CreateIndex(

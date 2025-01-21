@@ -23,46 +23,9 @@
               "resultFile": {
                 "uri": "file:///C:/Users/leona/source/repos/GestionDeReservas/GestionReservas/GestionReservas/AppDBContext.cs",
                 "region": {
-                  "startLine": 8,
+                  "startLine": 9,
                   "startColumn": 16,
-                  "endLine": 8,
-                  "endColumn": 28
-                }
-              }
-            }
-          ],
-          "relatedLocations": [
-            {
-              "physicalLocation": {
-                "uri": "file:///C:/Users/leona/source/repos/GestionDeReservas/GestionReservas/GestionReservas/AppDBContext.cs",
-                "region": {
-                  "startLine": 10,
-                  "startColumn": 31,
-                  "endLine": 10,
-                  "endColumn": 39
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "CS8618",
-          "level": "warning",
-          "message": "Non-nullable property 'Clientes' must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring the property as nullable.",
-          "suppressionStates": [
-            "suppressedInSource"
-          ],
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///C:/Users/leona/source/repos/GestionDeReservas/GestionReservas/GestionReservas/AppDBContext.cs",
-                "region": {
-                  "startLine": 8,
-                  "startColumn": 16,
-                  "endLine": 8,
+                  "endLine": 9,
                   "endColumn": 28
                 }
               }
@@ -88,7 +51,7 @@
         {
           "ruleId": "CS8618",
           "level": "warning",
-          "message": "Non-nullable property 'Habitaciones' must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring the property as nullable.",
+          "message": "Non-nullable property 'Clientes' must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring the property as nullable.",
           "suppressionStates": [
             "suppressedInSource"
           ],
@@ -97,9 +60,9 @@
               "resultFile": {
                 "uri": "file:///C:/Users/leona/source/repos/GestionDeReservas/GestionReservas/GestionReservas/AppDBContext.cs",
                 "region": {
-                  "startLine": 8,
+                  "startLine": 9,
                   "startColumn": 16,
-                  "endLine": 8,
+                  "endLine": 9,
                   "endColumn": 28
                 }
               }
@@ -111,8 +74,45 @@
                 "uri": "file:///C:/Users/leona/source/repos/GestionDeReservas/GestionReservas/GestionReservas/AppDBContext.cs",
                 "region": {
                   "startLine": 12,
-                  "startColumn": 34,
+                  "startColumn": 31,
                   "endLine": 12,
+                  "endColumn": 39
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "Non-nullable property 'Habitaciones' must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring the property as nullable.",
+          "suppressionStates": [
+            "suppressedInSource"
+          ],
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/leona/source/repos/GestionDeReservas/GestionReservas/GestionReservas/AppDBContext.cs",
+                "region": {
+                  "startLine": 9,
+                  "startColumn": 16,
+                  "endLine": 9,
+                  "endColumn": 28
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/leona/source/repos/GestionDeReservas/GestionReservas/GestionReservas/AppDBContext.cs",
+                "region": {
+                  "startLine": 13,
+                  "startColumn": 34,
+                  "endLine": 13,
                   "endColumn": 46
                 }
               }
@@ -134,9 +134,9 @@
               "resultFile": {
                 "uri": "file:///C:/Users/leona/source/repos/GestionDeReservas/GestionReservas/GestionReservas/AppDBContext.cs",
                 "region": {
-                  "startLine": 8,
+                  "startLine": 9,
                   "startColumn": 16,
-                  "endLine": 8,
+                  "endLine": 9,
                   "endColumn": 28
                 }
               }
@@ -147,9 +147,9 @@
               "physicalLocation": {
                 "uri": "file:///C:/Users/leona/source/repos/GestionDeReservas/GestionReservas/GestionReservas/AppDBContext.cs",
                 "region": {
-                  "startLine": 13,
+                  "startLine": 14,
                   "startColumn": 41,
-                  "endLine": 13,
+                  "endLine": 14,
                   "endColumn": 61
                 }
               }
@@ -157,140 +157,6 @@
           ],
           "properties": {
             "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "S1192",
-          "level": "warning",
-          "message": "Define a constant instead of using this literal 'SqlServer:Identity' 4 times.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///C:/Users/leona/source/repos/GestionDeReservas/GestionReservas/GestionReservas/Migrations/20250116165703_InitialCreate.cs",
-                "region": {
-                  "startLine": 19,
-                  "startColumn": 37,
-                  "endLine": 19,
-                  "endColumn": 57
-                }
-              }
-            }
-          ],
-          "relatedLocations": [
-            {
-              "physicalLocation": {
-                "uri": "file:///C:/Users/leona/source/repos/GestionDeReservas/GestionReservas/GestionReservas/Migrations/20250116165703_InitialCreate.cs",
-                "region": {
-                  "startLine": 36,
-                  "startColumn": 37,
-                  "endLine": 36,
-                  "endColumn": 57
-                }
-              }
-            },
-            {
-              "physicalLocation": {
-                "uri": "file:///C:/Users/leona/source/repos/GestionDeReservas/GestionReservas/GestionReservas/Migrations/20250116165703_InitialCreate.cs",
-                "region": {
-                  "startLine": 51,
-                  "startColumn": 37,
-                  "endLine": 51,
-                  "endColumn": 57
-                }
-              }
-            },
-            {
-              "physicalLocation": {
-                "uri": "file:///C:/Users/leona/source/repos/GestionDeReservas/GestionReservas/GestionReservas/Migrations/20250116165703_InitialCreate.cs",
-                "region": {
-                  "startLine": 80,
-                  "startColumn": 37,
-                  "endLine": 80,
-                  "endColumn": 57
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1,
-            "customProperties": {
-              "0": null,
-              "1": null,
-              "2": null
-            }
-          }
-        },
-        {
-          "ruleId": "S1192",
-          "level": "warning",
-          "message": "Define a constant instead of using this literal 'Reservas' 5 times.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///C:/Users/leona/source/repos/GestionDeReservas/GestionReservas/GestionReservas/Migrations/20250116165703_InitialCreate.cs",
-                "region": {
-                  "startLine": 47,
-                  "startColumn": 23,
-                  "endLine": 47,
-                  "endColumn": 33
-                }
-              }
-            }
-          ],
-          "relatedLocations": [
-            {
-              "physicalLocation": {
-                "uri": "file:///C:/Users/leona/source/repos/GestionDeReservas/GestionReservas/GestionReservas/Migrations/20250116165703_InitialCreate.cs",
-                "region": {
-                  "startLine": 91,
-                  "startColumn": 41,
-                  "endLine": 91,
-                  "endColumn": 51
-                }
-              }
-            },
-            {
-              "physicalLocation": {
-                "uri": "file:///C:/Users/leona/source/repos/GestionDeReservas/GestionReservas/GestionReservas/Migrations/20250116165703_InitialCreate.cs",
-                "region": {
-                  "startLine": 98,
-                  "startColumn": 24,
-                  "endLine": 98,
-                  "endColumn": 34
-                }
-              }
-            },
-            {
-              "physicalLocation": {
-                "uri": "file:///C:/Users/leona/source/repos/GestionDeReservas/GestionReservas/GestionReservas/Migrations/20250116165703_InitialCreate.cs",
-                "region": {
-                  "startLine": 103,
-                  "startColumn": 24,
-                  "endLine": 103,
-                  "endColumn": 34
-                }
-              }
-            },
-            {
-              "physicalLocation": {
-                "uri": "file:///C:/Users/leona/source/repos/GestionDeReservas/GestionReservas/GestionReservas/Migrations/20250116165703_InitialCreate.cs",
-                "region": {
-                  "startLine": 119,
-                  "startColumn": 23,
-                  "endLine": 119,
-                  "endColumn": 33
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1,
-            "customProperties": {
-              "0": null,
-              "1": null,
-              "2": null,
-              "3": null
-            }
           }
         }
       ],
@@ -306,22 +172,6 @@
             "tags": [
               "Compiler",
               "Telemetry"
-            ]
-          }
-        },
-        "S1192": {
-          "id": "S1192",
-          "shortDescription": "String literals should not be duplicated",
-          "fullDescription": "Duplicated string literals make the process of refactoring complex and error-prone, as any change would need to be propagated on all occurrences.",
-          "defaultLevel": "warning",
-          "helpUri": "https://rules.sonarsource.com/csharp/RSPEC-1192",
-          "properties": {
-            "category": "Minor Code Smell",
-            "isEnabledByDefault": false,
-            "tags": [
-              "C#",
-              "MainSourceScope",
-              "SonarWay"
             ]
           }
         }
